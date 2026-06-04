@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liquid Vibes • Spotify</title>
+    <title>Liquid Vibes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -11,25 +11,22 @@
     <div class="background"></div>
     
     <div class="sidebar">
-        <button class="menu-btn" id="menuBtn">
-            <i class="fas fa-bars"></i>
-        </button>
+        <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
     </div>
 
     <div class="player-container">
         <div class="glass-player">
+            <div class="album-art" id="albumArt">
+                <img src="https://i.scdn.co/image/ab67616d0000b2730c5f2c2f8c6e6f8f8e8f8e8f" alt="snowfall">
+            </div>
+            
             <div class="track-info">
-                <div class="album-art" id="albumArt">
-                    <img src="https://i.scdn.co/image/ab67616d0000b273f3e7c9c8f5e5f5e5f5e5f5e5" alt="Album Art">
-                </div>
-                <div class="track-details">
-                    <h2 id="trackName">snowfall</h2>
-                    <p id="artistName">Øneheart, reidenshi</p>
-                </div>
+                <h2 id="trackName">snowfall</h2>
+                <p id="artistName">Øneheart, reidenshi</p>
             </div>
 
             <!-- Спрятанный Spotify плеер -->
-            <div class="spotify-embed" id="spotifyEmbed" style="height: 0; overflow: hidden; opacity: 0;"></div>
+            <div class="hidden-embed" id="spotifyEmbed"></div>
 
             <div class="controls">
                 <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>

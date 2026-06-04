@@ -8,35 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="background"></div>
+    <div class="background" id="background"></div>
     
     <!-- Меню -->
     <button class="menu-btn" id="menuBtn">
         <i class="fas fa-bars"></i>
     </button>
 
-    <div class="main-player">
-        <div class="glass-player">
-            <div class="track-info">
-                <div class="album-art" id="albumArt">
-                    <img src="https://i.scdn.co/image/ab67616d0000b273f3e7c9c8f5e5f5e5f5e5f5e5" alt="Cover">
-                </div>
-                <h1 id="trackName">snowfall</h1>
-                <h2 id="artistName">Øneheart, reidenshi</h2>
-            </div>
-
-            <div class="spotify-embed" id="spotifyEmbed"></div>
-
-            <div class="controls">
-                <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
-                <button class="play-btn" id="playBtn"><i class="fas fa-play"></i></button>
-                <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
-                <button class="like-btn" id="likeBtn"><i class="fas fa-heart"></i></button>
-            </div>
+    <div class="main-content">
+        <div class="track-info">
+            <h1 id="trackName">snowfall</h1>
+            <p id="artistName">Øneheart, reidenshi</p>
         </div>
+
+        <div class="controls">
+            <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+            <button class="play-btn" id="playBtn"><i class="fas fa-play"></i></button>
+            <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+            <button class="like-btn" id="likeBtn"><i class="fas fa-heart"></i></button>
+        </div>
+
+        <!-- Spotify Embed (маленький) -->
+        <div class="spotify-embed" id="spotifyEmbed"></div>
     </div>
 
-    <!-- Любимые треки -->
+    <!-- Любимые -->
     <div class="favorites-sidebar" id="favoritesSidebar">
         <div class="favorites-header">
             <h3>❤️ Любимые треки</h3>

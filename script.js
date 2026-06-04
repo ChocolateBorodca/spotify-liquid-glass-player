@@ -1,4 +1,3 @@
-let currentTrackIndex = 0;
 let isPlaying = false;
 
 const tracks = [
@@ -9,53 +8,44 @@ const tracks = [
     }
 ];
 
-function loadTrack(index) {
-    const track = tracks[index];
+function loadTrack() {
+    const track = tracks[0];
     
     document.getElementById('trackName').textContent = track.name;
     document.getElementById('artistName').textContent = track.artist;
 
-    // Большая обложка
-    const albumImg = document.querySelector('.album-art img');
-    albumImg.src = `https://i.scdn.co/image/ab67616d0000b273f3e7c9c8f5e5f5e5f5e5f5e5`; // можно поменять
-
-    // Спрятанный embed (чтобы музыка могла играть)
-    const embedContainer = document.getElementById('spotifyEmbed');
-    embedContainer.innerHTML = `
-        <iframe 
-            src="https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0" 
-            width="100%" 
-            height="80" 
-            frameBorder="0" 
-            allow="autoplay; encrypted-media">
+    // Спрятанный плеер Spotify
+    document.getElementById('spotifyEmbed').innerHTML = `
+        <iframe src="https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0" 
+                width="100%" height="80" frameBorder="0" allow="autoplay; encrypted-media">
         </iframe>
     `;
 }
 
 // Кнопки
-const playBtn = document.getElementById('playBtn');
-const playIcon = playBtn.querySelector('i');
-
-playBtn.addEventListener('click', () => {
+document.getElementById('playBtn').addEventListener('click', () => {
     isPlaying = !isPlaying;
+    const icon = document.querySelector('#playBtn i');
     
     if (isPlaying) {
-        playIcon.classList.remove('fa-play');
-        playIcon.classList.add('fa-pause');
-        alert("▶ Музыка должна запуститься в спрятанном плеере.\nЕсли не играет — нажми Play внутри маленького плеера Spotify (он внизу)");
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
     } else {
-        playIcon.classList.remove('fa-pause');
-        playIcon.classList.add('fa-play');
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
     }
+    
+    // Пользователь должен нажать play в маленьком плеере, если не запустилось
+    alert("Нажми кнопку ▶ Play в маленьком плеере Spotify (он под обложкой)");
 });
 
 document.getElementById('nextBtn').addEventListener('click', () => {
-    alert("Пока только один трек.\nПришли ещё ссылки — добавим.");
+    alert("Пока только один трек. Пришли ссылку — добавим следующий.");
 });
 
 document.getElementById('prevBtn').addEventListener('click', () => {
-    alert("Пока только один трек.");
+    alert("Это первый трек.");
 });
 
 // Запуск
-loadTrack(0);
+loadTrack();

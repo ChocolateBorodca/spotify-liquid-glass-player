@@ -1,16 +1,11 @@
 let currentTrackIndex = 0;
 
+// Только твой трек
 const tracks = [
     {
-        id: "4xF4ZBGPZKxECeDFrqSAG4?si=84ec8fd443d04d2b",   // Shape of You
+        id: "4xF4ZBGPZKxECeDFrqSAG4",
         name: "snowfall",
-        artist: "Oneheart",
-        type: "track"
-    },
-    {
-        id: "4uLU6hMCjMI75M1A2tKUQC",
-        name: "Blinding Lights",
-        artist: "The Weeknd",
+        artist: "Øneheart, reidenshi",
         type: "track"
     }
 ];
@@ -23,16 +18,9 @@ function loadTrack(index) {
 
     const embedContainer = document.getElementById('spotifyEmbed');
     
-    let embedUrl = '';
-    if (track.type === "playlist") {
-        embedUrl = `https://open.spotify.com/embed/playlist/${track.id}?utm_source=generator&theme=0`;
-    } else {
-        embedUrl = `https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0`;
-    }
-
     embedContainer.innerHTML = `
         <iframe 
-            src="${embedUrl}" 
+            src="https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0" 
             width="100%" 
             height="380" 
             frameBorder="0" 
@@ -44,21 +32,18 @@ function loadTrack(index) {
 
 // Кнопки управления
 document.getElementById('playBtn').addEventListener('click', () => {
-    // Spotify embed не позволяет легко управлять снаружи, поэтому просто сообщение
-    alert("Нажми кнопку Play прямо в плеере Spotify ↑");
+    alert("▶ Нажми кнопку Play в плеере Spotify сверху");
 });
 
 document.getElementById('nextBtn').addEventListener('click', () => {
-    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-    loadTrack(currentTrackIndex);
+    alert("Пока только один трек. Добавь ещё треки позже!");
 });
 
 document.getElementById('prevBtn').addEventListener('click', () => {
-    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
-    loadTrack(currentTrackIndex);
+    alert("Пока только один трек.");
 });
 
-// Меню
+// Меню любимых треков
 document.getElementById('menuBtn').addEventListener('click', () => {
     document.getElementById('favoritesSidebar').classList.add('open');
 });
@@ -66,4 +51,5 @@ document.getElementById('closeFavorites').addEventListener('click', () => {
     document.getElementById('favoritesSidebar').classList.remove('open');
 });
 
+// Запуск
 loadTrack(0);

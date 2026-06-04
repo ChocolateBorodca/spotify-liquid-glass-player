@@ -1,6 +1,5 @@
 let currentTrackIndex = 0;
 
-// Только твой трек
 const tracks = [
     {
         id: "4xF4ZBGPZKxECeDFrqSAG4",
@@ -22,7 +21,7 @@ function loadTrack(index) {
         <iframe 
             src="https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0" 
             width="100%" 
-            height="380" 
+            height="420" 
             frameBorder="0" 
             allowfullscreen="" 
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
@@ -30,20 +29,20 @@ function loadTrack(index) {
     `;
 }
 
-// Кнопки управления
+// Наши красивые кнопки (управляют только переключением)
 document.getElementById('playBtn').addEventListener('click', () => {
-    alert("▶ Нажми кнопку Play в плеере Spotify сверху");
+    alert("▶ Нажми кнопку Play прямо внутри Spotify плеера");
 });
 
 document.getElementById('nextBtn').addEventListener('click', () => {
-    alert("Пока только один трек. Добавь ещё треки позже!");
+    alert("Пока только один трек. Добавь ещё — пришлёшь ссылку.");
 });
 
 document.getElementById('prevBtn').addEventListener('click', () => {
     alert("Пока только один трек.");
 });
 
-// Меню любимых треков
+// Меню
 document.getElementById('menuBtn').addEventListener('click', () => {
     document.getElementById('favoritesSidebar').classList.add('open');
 });
@@ -51,5 +50,4 @@ document.getElementById('closeFavorites').addEventListener('click', () => {
     document.getElementById('favoritesSidebar').classList.remove('open');
 });
 
-// Запуск
 loadTrack(0);

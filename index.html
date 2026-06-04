@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Glass Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h2>Любимые треки</h2>
+        <ul id="favorites-list"></ul>
+    </div>
+
+    <!-- Main Player -->
+    <div class="player-container">
+        <div class="glass-player">
+            <!-- Spotify Embed -->
+            <div class="spotify-embed" id="spotify-embed">
+                <!-- Embed will be injected here -->
+            </div>
+
+            <div class="track-info">
+                <h1 id="track-title">Название трека</h1>
+                <p id="track-artist">Исполнитель</p>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn" id="prev-btn">⏮</button>
+                <button class="control-btn play-pause" id="play-pause-btn">▶</button>
+                <button class="control-btn" id="next-btn">⏭</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -10,14 +10,12 @@
 <body>
     <div class="background"></div>
     
-    <!-- Кнопка меню -->
     <div class="sidebar">
         <button class="menu-btn" id="menuBtn">
             <i class="fas fa-bars"></i>
         </button>
     </div>
 
-    <!-- Главный плеер -->
     <div class="player-container">
         <div class="glass-player">
             <div class="track-info">
@@ -25,21 +23,18 @@
                     <img src="https://picsum.photos/400/400" alt="Album Art">
                 </div>
                 <div class="track-details">
-                    <h2 id="trackName">Название трека</h2>
-                    <p id="artistName">Исполнитель</p>
+                    <h2 id="trackName">Shape of You</h2>
+                    <p id="artistName">Ed Sheeran</p>
                 </div>
             </div>
 
+            <!-- Spotify Embed -->
             <div class="spotify-embed" id="spotifyEmbed"></div>
 
             <div class="controls">
                 <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
                 <button class="play-btn" id="playBtn"><i class="fas fa-play"></i></button>
                 <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
-            </div>
-
-            <div class="progress-container">
-                <input type="range" class="progress-bar" id="progressBar" value="0" min="0" max="100">
             </div>
         </div>
     </div>

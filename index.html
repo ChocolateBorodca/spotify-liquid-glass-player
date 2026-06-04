@@ -20,16 +20,16 @@
         <div class="glass-player">
             <div class="track-info">
                 <div class="album-art" id="albumArt">
-                    <img src="https://picsum.photos/400/400" alt="Album Art">
+                    <img src="https://i.scdn.co/image/ab67616d0000b273f3e7c9c8f5e5f5e5f5e5f5e5" alt="Album Art">
                 </div>
                 <div class="track-details">
-                    <h2 id="trackName">Shape of You</h2>
-                    <p id="artistName">Ed Sheeran</p>
+                    <h2 id="trackName">snowfall</h2>
+                    <p id="artistName">Øneheart, reidenshi</p>
                 </div>
             </div>
 
-            <!-- Spotify Embed -->
-            <div class="spotify-embed" id="spotifyEmbed"></div>
+            <!-- Спрятанный Spotify плеер -->
+            <div class="spotify-embed" id="spotifyEmbed" style="height: 0; overflow: hidden; opacity: 0;"></div>
 
             <div class="controls">
                 <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
@@ -37,15 +37,6 @@
                 <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
             </div>
         </div>
-    </div>
-
-    <!-- Любимые треки -->
-    <div class="favorites-sidebar" id="favoritesSidebar">
-        <div class="favorites-header">
-            <h3>Любимые треки</h3>
-            <button class="close-btn" id="closeFavorites">✕</button>
-        </div>
-        <div class="favorites-list" id="favoritesList"></div>
     </div>
 
     <script src="script.js"></script>

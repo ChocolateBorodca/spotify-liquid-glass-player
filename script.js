@@ -2,9 +2,9 @@ let currentTrackIndex = 0;
 
 const tracks = [
     {
-        id: "7qiZfU4dY1lWllzX7mPBI3",   // Shape of You
-        name: "Shape of You",
-        artist: "Ed Sheeran",
+        id: "4xF4ZBGPZKxECeDFrqSAG4?si=84ec8fd443d04d2b",   // Shape of You
+        name: "snowfall",
+        artist: "Oneheart",
         type: "track"
     },
     {

@@ -3,44 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liquid Glass Player</title>
+    <title>Liquid Vibes • Spotify</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div class="background"></div>
     
-    <!-- Hamburger Menu -->
-    <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <h2>Любимые треки</h2>
-        <ul id="favorites-list"></ul>
+    <!-- Кнопка меню -->
+    <div class="sidebar">
+        <button class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
 
-    <!-- Main Player -->
+    <!-- Главный плеер -->
     <div class="player-container">
         <div class="glass-player">
-            <!-- Spotify Embed -->
-            <div class="spotify-embed" id="spotify-embed">
-                <!-- Embed will be injected here -->
+            <div class="track-info">
+                <div class="album-art" id="albumArt">
+                    <img src="https://picsum.photos/400/400" alt="Album Art">
+                </div>
+                <div class="track-details">
+                    <h2 id="trackName">Название трека</h2>
+                    <p id="artistName">Исполнитель</p>
+                </div>
             </div>
 
-            <div class="track-info">
-                <h1 id="track-title">Название трека</h1>
-                <p id="track-artist">Исполнитель</p>
-            </div>
+            <div class="spotify-embed" id="spotifyEmbed"></div>
 
             <div class="controls">
-                <button class="control-btn" id="prev-btn">⏮</button>
-                <button class="control-btn play-pause" id="play-pause-btn">▶</button>
-                <button class="control-btn" id="next-btn">⏭</button>
+                <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                <button class="play-btn" id="playBtn"><i class="fas fa-play"></i></button>
+                <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+            </div>
+
+            <div class="progress-container">
+                <input type="range" class="progress-bar" id="progressBar" value="0" min="0" max="100">
             </div>
         </div>
+    </div>
+
+    <!-- Любимые треки -->
+    <div class="favorites-sidebar" id="favoritesSidebar">
+        <div class="favorites-header">
+            <h3>Любимые треки</h3>
+            <button class="close-btn" id="closeFavorites">✕</button>
+        </div>
+        <div class="favorites-list" id="favoritesList"></div>
     </div>
 
     <script src="script.js"></script>
